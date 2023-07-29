@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,500&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@200;300;400;500&family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- call -->
+      <div class="call">
+        <p>INCOMING CALL</p>
+        <div class="call__image"></div>
+        <p>Jessie Burke</p>
+        <div class="call__action">
+          <button class="call__action--reject">
+            <i class="fa-solid fa-phone-slash"></i>
+          </button>
+          <button class="call__action--accept">
+            <i class="fa-solid fa-phone"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- comments -->
+      <div class="comments">
+        <div class="comments__image"></div>
+        <div class="comments__details">
+          <p><span>Lela Hale</span> commented on your post</p>
+          <p>2 HOURS AGO</p>
+        </div>
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+
+      <!-- tweet -->
+      <div class="twitter">
+        <div class="twitter__notifications">7</div>
+        <i class="fa-brands fa-twitter"></i>
+      </div>
+
+      <!-- messages -->
+      <div class="message">
+        <div class="message__notifications">
+          <i class="fa-regular fa-comment-dots"></i>
+          <div>2</div>
+        </div>
+        <p>Do you want to allow push notifications?</p>
+        <div class="message__action">
+          <button class="message__action--reject">NO</button>
+          <button class="message__action--accept">YES</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

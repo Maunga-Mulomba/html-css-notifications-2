@@ -1,0 +1,263 @@
+:root {
+  --background-color-1: #f9f9f9;
+  --background-color-2: linear-gradient(to right, #545454, #373737);
+  --primary-font-color: #5d5d5d;
+  --secondary-font-color: #aaaaaa;
+  --image-border: 6px solid #3c3f3d;
+  --div-box-shadow: 0 5px 9px 0 #bbbbbb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #eeeeee;
+}
+
+.container {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.2fr;
+  grid-template-rows: auto auto 100px;
+  grid-template-areas:
+    "call comments comments"
+    "call message ."
+    "twitter message .";
+  gap: 3rem;
+}
+
+.container button {
+  cursor: pointer;
+}
+
+.call,
+.message {
+  background-color: var(--background-color-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: var(--div-box-shadow);
+}
+
+.call {
+  grid-area: call;
+}
+
+.call p:first-of-type {
+  color: var(--secondary-font-color);
+  font-size: 0.8rem;
+}
+
+.call__image,
+.comments__image {
+  border-radius: 50%;
+  border: var(--image-border);
+  background-size: cover;
+}
+
+.call__image {
+  width: 90px;
+  height: 90px;
+  box-shadow: var(--div-box-shadow);
+
+  background-image: url("https://images.pexels.com/photos/4906286/pexels-photo-4906286.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
+
+.call p:last-of-type {
+  font-weight: 600;
+}
+
+.call__action,
+.message__action {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.call__action button {
+  padding: 0.4rem 2.3rem;
+  border-radius: 25px;
+}
+
+.call__action button i {
+  color: white;
+  font-size: 17px;
+}
+
+.call__action--reject {
+  background: linear-gradient(to right, #cd3671, #c4203c);
+  border: 2.5px solid #e5c3d1;
+}
+
+.call__action--accept {
+  background: linear-gradient(to right, #2db38a, #1da67a);
+  border: 2.5px solid #c2e8dc;
+}
+
+/* comments */
+.comments {
+  background: var(--background-color-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 50px;
+  padding: 0.5rem;
+  box-shadow: var(--div-box-shadow);
+  grid-area: comments;
+}
+
+.comments__image {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgb(40, 39, 39), 0 -1px 4px 0 rgb(40, 39, 39);
+
+  background-image: url("https://images.pexels.com/photos/7626615/pexels-photo-7626615.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
+
+.comments__details {
+  color: var(--secondary-font-color);
+}
+
+.comments__details p:last-of-type {
+  font-size: 0.7rem;
+  margin-top: 6px;
+}
+
+.comments span {
+  font-weight: 600;
+}
+
+.comments i {
+  color: #d8a964;
+  padding: 0 0.5rem;
+  margin-left: 20px;
+}
+
+/* twitter */
+
+.twitter {
+  background: var(--background-color-2);
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--div-box-shadow);
+  position: relative;
+  align-self: start;
+  justify-self: end;
+  grid-area: twitter;
+}
+
+.twitter i {
+  color: white;
+  font-size: 48px;
+  filter: drop-shadow(3px);
+}
+
+.twitter__notifications,
+.message__notifications > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  position: absolute;
+  color: white;
+}
+.twitter__notifications {
+  background-color: #86b5f5;
+  right: -5px;
+  top: -5px;
+}
+
+/* messages */
+
+.message {
+  grid-area: message;
+  align-self: flex-end;
+}
+
+.message__notifications {
+  position: relative;
+}
+
+.message__notifications i {
+  font-size: 58px;
+  color: #5f5f5fa8;
+  transform: rotateY(180deg);
+}
+
+.message__notifications > div {
+  background-color: #ef5551;
+  left: 4px;
+  top: -2px;
+}
+
+.message > p {
+  width: 60%;
+  text-align: center;
+  font-weight: 600;
+  color: #3c3f3d;
+}
+
+.message__action button {
+  padding: 0.4rem 2.3rem;
+  border-radius: 30px;
+}
+
+.message__action--reject {
+  background-color: transparent;
+  border: 2.5px solid #d7d7d7;
+  color: #b9b9b9;
+  font-weight: 600;
+}
+
+.message__action--accept {
+  background: var(--background-color-2);
+  border: none;
+  color: rgb(222, 222, 222);
+  box-shadow: var(--div-box-shadow);
+}
+
+/* ********************************************* */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "twitter"
+      "comments"
+      "call"
+      "message";
+
+    gap: 2rem;
+  }
+
+  .comments {
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+
+  .comments i {
+    display: none;
+  }
+  .twitter {
+    justify-self: center;
+  }
+}
